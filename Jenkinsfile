@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage ('Build Docker Image') {
-            seteps{
+            steps {
                 script {
                     dockerapp = docker.build("deividlm/kube-news:${env.BUILD_id}", '-f ./src/DockerFile ./src')
                 }
